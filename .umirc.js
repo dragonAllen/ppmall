@@ -20,5 +20,12 @@ export default {
         ],
       },
     }],
-  ]
+  ],
+  proxy: {
+    '/test': {
+      target: 'https://www.baidu.com',
+      pathRewrite: { '^/test': '' },
+      changeOrigin: true
+    }
+  }
 }

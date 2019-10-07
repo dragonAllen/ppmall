@@ -1,5 +1,21 @@
 import React from 'react';
-import { Layout, Row, Col, Select, Divider, Menu, BackTop, Badge, Drawer, Button  } from 'antd';
+import {
+  Layout,
+  Row,
+  Col,
+  Select,
+  Divider,
+  Menu,
+  BackTop,
+  Badge,
+  Drawer,
+  Button,
+  List,
+  Icon,
+  Spin,
+  Typography
+} from 'antd';
+import InfiniteScroll from 'react-infinite-scroller';
 import Logo from '../../public/logo.jpg';
 import User from '../../public/user.svg';
 import Cart from '../../public/cart.svg';
@@ -8,14 +24,128 @@ import BasicStyle from './index.scss';
 const { Header, Content, Footer } = Layout;
 const { Option } = Select;
 const { SubMenu } = Menu;
+const { Paragraph } = Typography;
 
 class BasicLayout extends React.Component {
   state = {
-    data: [],
+    cartArray: [
+      {
+        id: '1',
+        name: '1',
+      },
+      {
+        id: '2',
+        name: '2',
+      },
+      {
+        id: '3',
+        name: '3',
+      },
+      {
+        id: '4',
+        name: '4',
+      },
+      {
+        id: '5',
+        name: '5',
+      },
+      {
+        id: '6',
+        name: '6',
+      },
+      {
+        id: '7',
+        name: '7',
+      },
+      {
+        id: '8',
+        name: '8',
+      },
+      {
+        id: '9',
+        name: '9',
+      },
+      {
+        id: '26',
+        name: '26',
+      },
+      {
+        id: '27',
+        name: '27',
+      },
+      {
+        id: '28',
+        name: '28',
+      },
+      {
+        id: '29',
+        name: '29',
+      },
+    ],
+    cartArray2: [
+      {
+        id: '11',
+        name: '11',
+      },
+      {
+        id: '21',
+        name: '21',
+      },
+      {
+        id: '31',
+        name: '31',
+      },
+      {
+        id: '41',
+        name: '41',
+      },
+      {
+        id: '51',
+        name: '51',
+      },
+      {
+        id: '61',
+        name: '61',
+      },
+      {
+        id: '71',
+        name: '71',
+      },
+      {
+        id: '81',
+        name: '81',
+      },
+      {
+        id: '91',
+        name: '91',
+      },
+    ],
     value: [],
     fetching: false,
     visible: false,
+    loading: false,
+    hasMore: true,
   };
+
+  componentDidMount() {}
+
+  handleInfiniteOnLoad() {
+    let { cartArray } = this.state;
+    this.setState({
+      loading: true,
+    });
+    if (cartArray.length > 18) {
+      this.setState({
+        hasMore: false,
+        loading: false,
+      });
+    }
+    const data = cartArray.concat(this.state.cartArray2);
+    this.setState({
+      cartArray: data,
+      loading: false,
+    });
+  }
 
   showDrawer = () => {
     this.setState({
@@ -44,29 +174,94 @@ class BasicLayout extends React.Component {
             style={{
               height: '30px',
               lineHeight: '30px',
-              marginBottom: '20px'
             }}
           >
-            <Col xs={12} sm={8} md={6} lg={5} xl={4} xxl={3}>
-              共 xx 件商品
+            <Col xs={24} sm={8} md={6} lg={5} xl={4} xxl={3}>
+              共 99 件商品
             </Col>
-            <Col xs={12} sm={8} md={12} lg={13} xl={14} xxl={15}>
-              总计¥ xxxx
+            <Col xs={24} sm={16} md={12} lg={13} xl={14} xxl={15}>
+              总计¥ 1000000.00
             </Col>
-            <Col xs={24} sm={8} md={6} lg={6} xl={6} xxl={6} style={{ textAlign: 'right' }}>
+            <Col xs={24} sm={24} md={6} lg={6} xl={6} xxl={6} style={{ textAlign: 'right' }}>
               <Button type="danger" block>
                 去购物车
               </Button>
             </Col>
           </Row>
-          <Divider/>
-          <Row
-            style={{
-              background: '#c0c0c0',
-              height: '500px',
-            }}
-          >
-            内容
+          <Divider />
+          <Row className={BasicStyle.cartList}>
+            <InfiniteScroll
+              initialLoad={false}
+              pageStart={0}
+              loadMore={this.handleInfiniteOnLoad.bind(this)}
+              hasMore={!this.state.loading && this.state.hasMore}
+              useWindow={false}
+            >
+              <List
+                dataSource={this.state.cartArray}
+                renderItem={item => (
+                  <List.Item key={item.id}>
+                    <Row
+                      gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }}
+                      style={{ width: '99%'}}
+                    >
+                      <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
+                        <img
+                          style={{ width: '100%', minHeight: '160px' }}
+                          alt="logo"
+                          src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                        />
+                      </Col>
+                      <Col
+                        xs={24}
+                        sm={24}
+                        md={16}
+                        lg={16}
+                        xl={16}
+                        xxl={16}
+                      >
+                        <Row style={{marginTop: '10px'}}>Sid Meier’s Civilization® VI</Row>
+                        <Row>
+                          <Paragraph ellipsis={{ rows: 3}}>
+                            文明6
+                          </Paragraph>
+                        </Row>
+                        <Row>
+                          <Col xs={14}
+                               sm={14}
+                               md={16}
+                               lg={16}
+                               xl={18}
+                               xxl={20}>¥ 99</Col>
+                          <Col xs={10}
+                               sm={10}
+                               md={8}
+                               lg={8}
+                               xl={6}
+                               xxl={4}>
+                            <Icon type="delete" />
+                            删除
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </List.Item>
+                )}
+              >
+                {this.state.loading && this.state.hasMore && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '40px',
+                      width: '100%',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <Spin />
+                  </div>
+                )}
+              </List>
+            </InfiniteScroll>
           </Row>
         </Drawer>
         <Header style={{ height: '100px', padding: '0 10% 0 10%' }}>
