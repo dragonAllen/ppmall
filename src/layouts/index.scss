@@ -1,15 +1,41 @@
-
-.normal {
-  font-family: Georgia, sans-serif;
-  text-align: center;
+.headerRow{
+  height: 40px;
+  width: 100%;
+  line-Height: 100px
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: normal;
-  letter-spacing: -1px;
-  background: darkslateblue;
-  padding: .6em 0;
-  color: white;
+.logo{
+  border-radius: 50%;
+  width: 80%;
+  height: auto;
+  max-width: 40px;
+  margin-left: 10px;
+}
+
+.navText{
+  color: #C0C0C0;
+  font-size: 16px;
+}
+
+.navImg{
+  width: 25px;
+  height: 25px;
+}
+
+.location {
+  color: #C0C0C0;
+  font-size: 1vw;
+  display: inline-block;
+  background: url(../../public/location.svg) no-repeat left center;
+  background-size: 40% 40%;
+  padding-left:40%;
+}
+
+ul li{
+  list-style: none;
+}
+
+* {
   margin: 0;
+  padding: 0;
 }

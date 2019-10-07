@@ -10,7 +10,6 @@ export default {
       dynamicImport: false,
       title: 'ppmall',
       dll: false,
-      
       routes: {
         exclude: [
           /models\//,
@@ -21,5 +20,5 @@ export default {
         ],
       },
     }],
-  ],
+  ]
 }
