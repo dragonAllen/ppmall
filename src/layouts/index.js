@@ -15,6 +15,7 @@ import {
   Icon,
   Spin,
   Typography,
+  notification,
 } from 'antd';
 import Link from 'umi/link';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -49,6 +50,22 @@ class BasicLayout extends React.Component {
     loading: false,
     hasMore: true,
   };
+
+  componentWillMount() {
+    const title = <p style={{ color: '#108ee9' }}>欢迎光临皮皮商城</p>;
+    const desc = (
+      <div>
+        <p>本网站仅用于个人技术学习</p>
+        <p>现阶段以实现基础功能为主</p>
+        <p>点击进入 Github 了解详情</p>
+      </div>
+    );
+    notification.open({
+      icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
+      message: title,
+      description: desc,
+    });
+  }
 
   componentDidMount() {}
 
@@ -306,7 +323,7 @@ class BasicLayout extends React.Component {
           </Menu>
         </Row>
         <Content>{this.props.children}</Content>
-        <Footer style={{ padding: '60px 10% 40px 10%', background: '#ffffff'}}>
+        <Footer style={{ padding: '60px 10% 40px 10%', background: '#ffffff' }}>
           <Row>
             <Col xs={6} sm={6} md={5} lg={4} xl={3} xxl={2}>
               <ul>

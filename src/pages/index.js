@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Player from 'griffith';
 import {
   Carousel,
-  notification,
-  Icon,
   Card,
   Row,
   Col,
@@ -169,19 +167,7 @@ export default class Index extends Component {
   }
 
   componentWillMount() {
-    const title = <p style={{ color: '#108ee9' }}>欢迎光临皮皮商城</p>;
-    const desc = (
-      <div>
-        <p>本网站仅用于个人技术学习</p>
-        <p>现阶段以实现基础功能为主</p>
-        <p>点击进入 Github 了解详情</p>
-      </div>
-    );
-    notification.open({
-      icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
-      message: title,
-      description: desc,
-    });
+
   }
 
   componentWillUnmount() {}

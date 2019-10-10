@@ -50,7 +50,7 @@ export default class HotLayout extends React.Component {
           <div className={LayoutStyle.secondary}>所有产品</div>
         </Row>
         <Layout className={LayoutStyle.page}>
-          <Sider breakpoint="sm" collapsedWidth="0" className={LayoutStyle.sider}>
+          <Sider breakpoint="lg" collapsedWidth="0" className={LayoutStyle.sider}>
             <Menu theme="dark" mode="inline" selectable={false} className={LayoutStyle.menu}>
               <Row className={LayoutStyle.row}>按标签缩小范围</Row>
               <Checkbox.Group>

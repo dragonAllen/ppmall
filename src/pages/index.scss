@@ -30,11 +30,13 @@
 .discounts {
   color: #001529;
   text-align: right;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 1600px) {
   .discounts {
     color: #001529;
+    font-weight: 600;
     text-align: right;
   }
 }
