@@ -88,7 +88,7 @@ export default class Total extends React.Component {
             return (
               <img
                 src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/photo/${content}`}
-                alt="测试"
+                alt=""
                 key={index}
                 className={TotalStyle.carouselImg}
               />
@@ -153,9 +153,9 @@ export default class Total extends React.Component {
                       </Row>
                       <Row>
                         <Col xs={24} sm={24} md={24} lg={6} xl={4} xxl={4}>
-                          <img className={TotalStyle.listThirdRowTag} alt="" src="/windows.svg" />
-                          <img className={TotalStyle.listThirdRowTag} alt="" src="/mac.svg" />
-                          <img className={TotalStyle.listThirdRowTag} alt="" src="/steam.svg" />
+                          <img className={TotalStyle.listThirdRowTag} alt="windows" src="/windows.svg" />
+                          <img className={TotalStyle.listThirdRowTag} alt="mac" src="/mac.svg" />
+                          <img className={TotalStyle.listThirdRowTag} alt="steam" src="/steam.svg" />
                         </Col>
                         <Col
                           xs={16}

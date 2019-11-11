@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Row, Col, Card, Icon, Typography, Table, Button } from 'antd';
 import ModalForm from '@/components/FormComponents/ModalForm';
 import CheckoutStyle from './index.scss';
@@ -8,8 +8,8 @@ const { Text } = Typography;
 
 class checkoutForm extends ModalForm {
   getDataSource = () => [
-    { label: '收货人', name: 'name', required: true, max: 10, baseCheck: 1 },
-    { label: '收货地址', name: 'address', required: true, max: 30, baseCheck: 1 },
+    { label: '收货人', name: 'name', required: true, max: 10, basecheck: 1 },
+    { label: '收货地址', name: 'address', required: true, max: 30, basecheck: 1 },
     {
       label: '手机号码',
       name: 'phoneNumber',
@@ -103,28 +103,30 @@ export default class Checkout extends React.Component {
             {this.state.data
               ? this.state.data.map((item, index) => {
                   return (
-                    <Col xs={24} sm={12} md={12} lg={8} xl={8} xxl={6} key={index}>
-                      <Card
-                        style={{ width: '100%', height: '120px', marginBottom: '8px' }}
-                        key={index}
-                      >
-                        <Row>
-                          <Text ellipsis style={{ width: '100%' }}>
-                            收货人: {item.name}
-                          </Text>
-                        </Row>
-                        <Row>
-                          <Text ellipsis style={{ width: '100%' }}>
-                            收货地址: {item.address}
-                          </Text>
-                        </Row>
-                        <Row>
-                          <Text ellipsis style={{ width: '100%' }}>
-                            手机号码: {item.phoneNumber}
-                          </Text>
-                        </Row>
-                      </Card>
-                    </Col>
+                    <Fragment key={index}>
+                      <Col xs={24} sm={12} md={12} lg={8} xl={8} xxl={6}>
+                        <Card
+                          style={{ width: '100%', height: '120px', marginBottom: '8px' }}
+                          key={index}
+                        >
+                          <Row>
+                            <Text ellipsis style={{ width: '100%' }}>
+                              收货人: {item.name}
+                            </Text>
+                          </Row>
+                          <Row>
+                            <Text ellipsis style={{ width: '100%' }}>
+                              收货地址: {item.address}
+                            </Text>
+                          </Row>
+                          <Row>
+                            <Text ellipsis style={{ width: '100%' }}>
+                              手机号码: {item.phoneNumber}
+                            </Text>
+                          </Row>
+                        </Card>
+                      </Col>
+                    </Fragment>
                   );
                 })
               : null}

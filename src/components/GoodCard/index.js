@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Button, Card, Col, Row, Tag } from 'antd';
 import GoodCardStyle from './index.scss';
 import PropTypes from 'prop-types';
 
 export default class GoodCard extends React.Component {
-
   static propTypes = {
     data: PropTypes.array,
     title: PropTypes.string,
@@ -37,44 +36,53 @@ export default class GoodCard extends React.Component {
         <Row gutter={4}>
           {data.map((content, index) => {
             return (
-              <Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6} key={content.id}>
-                <Card
-                  className={GoodCardStyle.innerCart}
-                  cover={<img src={content.imgSrc} alt={content.imgAlt} className={GoodCardStyle.coverImg} />}
-                >
-                  <Card.Meta
-                    title={content.title}
-                    description={
-                      <div>
-                        <Row className={GoodCardStyle.cartHoverOne}>
-                          <Col span={16}>
-                            <p>{content.titleCN}</p>
-                          </Col>
-                          <Col span={8} className={GoodCardStyle.discounts}>
-                            {content.discounts ? <Tag color="#001529">${content.discounts}</Tag> : null}
-                            {content.price}
-                          </Col>
-                        </Row>
-                        <Row gutter={4} className={GoodCardStyle.cartHoverTwo}>
-                          <Col span={12} className={GoodCardStyle.cartButtonOne}>
-                            <Button block>查看详情</Button>
-                          </Col>
-                          <Col span={12} className={GoodCardStyle.cartButtonTwo}>
-                            <Button type="primary" block>
-                              加入购物车
-                            </Button>
-                          </Col>
-                        </Row>
-                      </div>
+              <Fragment key={content.id}>
+                <Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6}>
+                  <Card
+                    className={GoodCardStyle.innerCart}
+                    cover={
+                      <img
+                        src={content.imgSrc}
+                        alt={content.imgAlt}
+                        className={GoodCardStyle.coverImg}
+                      />
                     }
-                  />
-                </Card>
-              </Col>
+                  >
+                    <Card.Meta
+                      title={content.title}
+                      description={
+                        <div>
+                          <Row className={GoodCardStyle.cartHoverOne}>
+                            <Col span={16}>
+                              <p>{content.titleCN}</p>
+                            </Col>
+                            <Col span={8} className={GoodCardStyle.discounts}>
+                              {content.discounts ? (
+                                <Tag color="#001529">${content.discounts}</Tag>
+                              ) : null}
+                              {content.price}
+                            </Col>
+                          </Row>
+                          <Row gutter={4} className={GoodCardStyle.cartHoverTwo}>
+                            <Col span={12} className={GoodCardStyle.cartButtonOne}>
+                              <Button block>查看详情</Button>
+                            </Col>
+                            <Col span={12} className={GoodCardStyle.cartButtonTwo}>
+                              <Button type="primary" block>
+                                加入购物车
+                              </Button>
+                            </Col>
+                          </Row>
+                        </div>
+                      }
+                    />
+                  </Card>
+                </Col>
+              </Fragment>
             );
           })}
         </Row>
       </Card>
-
     );
   }
 }

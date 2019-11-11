@@ -1,14 +1,5 @@
-import React from 'react';
-import {
-  Row,
-  Col,
-  Carousel,
-  Typography,
-  Anchor,
-  Tooltip,
-  Tag,
-  List,
-} from 'antd';
+import React, { Fragment } from 'react';
+import { Row, Col, Carousel, Typography, Anchor, Tooltip, Tag, List } from 'antd';
 import { endsWith } from 'lodash';
 import GoodDetailStyle from './index.scss';
 import VideoPlayer from '@/components/VideoPlayer';
@@ -111,43 +102,47 @@ export default class GoodDetail extends React.Component {
             >
               {this.state.CarouselArray.map((content, index) => {
                 return endsWith(content, '.mp4') ? (
-                  <VideoPlayer
-                    key={index}
-                    src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/video/${content}`}
-                    ref={ref => (this.videoRefs[index] = ref)}
-                    onEnded={this.handleVideoEnd.bind(this, index)}
-                    autoPlay={index === 0}
-                  />
+                  <Fragment key={index}>
+                    <VideoPlayer
+                      src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/video/${content}`}
+                      ref={ref => (this.videoRefs[index] = ref)}
+                      onEnded={this.handleVideoEnd.bind(this, index)}
+                      autoPlay={index === 0}
+                    />
+                  </Fragment>
                 ) : (
-                  <img
-                    src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/photo/${content}`}
-                    className={GoodDetailStyle.carouselImg}
-                    alt=" "
-                    key={index}
-                  />
+                  <Fragment key={index}>
+                    <img
+                      src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/photo/${content}`}
+                      className={GoodDetailStyle.carouselImg}
+                      alt=" "
+                    />
+                  </Fragment>
                 );
               })}
             </Carousel>
             <ul className={GoodDetailStyle.categoryHead}>
               {this.state.CarouselArray.map((content, index) => {
                 return endsWith(content, '.mp4') ? (
-                  <li onClick={this.handleChangeCarousel.bind(this, index)}>
-                    <img
-                      src="/videoPlay.jpg"
-                      alt=" "
-                      style={{ width: '160px', height: '90px' }}
-                      key={index}
-                    />
-                  </li>
+                  <Fragment key={index}>
+                    <li onClick={this.handleChangeCarousel.bind(this, index)}>
+                      <img
+                        src="/videoPlay.jpg"
+                        alt="videoPlay"
+                        style={{ width: '160px', height: '90px' }}
+                      />
+                    </li>
+                  </Fragment>
                 ) : (
+                  <Fragment key={index}>
                   <li onClick={this.handleChangeCarousel.bind(this, index)}>
                     <img
                       src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/photo/${content}`}
-                      alt=" "
+                      alt="测试"
                       style={{ width: '160px', height: '90px' }}
-                      key={index}
                     />
                   </li>
+                  </Fragment>
                 );
               })}
             </ul>

@@ -1,49 +1,56 @@
-.headerRow {
-  height: 40px;
-  width: 100%;
-  line-height: 100px;
-}
+.page {
+  height: 100px;
+  padding: 0 10% 0 10%;
 
-.logo {
-  border-radius: 50%;
-  width: 80%;
-  height: auto;
-  max-width: 40px;
-  margin-left: 10px;
-}
-
-.navText {
-  color: #c0c0c0;
-  font-size: 16px;
-}
-
-.navImg {
-  width: 25px;
-  height: 25px;
-}
-
-.popoverContent {
-  width: 140px;
-  text-align: center;
-
-  .name {
-    width: 100%;
-    padding: 14px 10px;
-    font-size: 12px;
-  }
-
-  .button {
+  .headerRow {
     height: 40px;
-    font-size: 12px;
+    width: 100%;
+    line-height: 100px;
+  }
+
+  .logo {
+    border-radius: 50%;
+    width: 80%;
+    height: auto;
+    max-width: 40px;
+    margin-left: 10px;
+  }
+
+  .navText {
+    color: #c0c0c0;
+    font-size: 16px;
+  }
+
+  .navImg {
+    width: 25px;
+    height: 25px;
+  }
+}
+.popoverCard{
+  :global {
+    .ant-popover-inner-content {
+      padding: 14px 0 0 0;
+    }
+
+    .ant-btn {
+      border-radius: 0;
+    }
+  }
+
+  .popoverContent {
+    width: 140px;
+    text-align: center;
+
+    .name {
+      width: 100%;
+      padding: 14px 10px;
+      font-size: 12px;
+    }
+
+    .button {
+      height: 40px;
+      font-size: 12px;
+    }
   }
 }
 
-:global {
-  .ant-popover-inner-content {
-    padding: 14px 0 0 0;
-  }
-
-  .ant-btn {
-    border-radius: 0;
-  }
-}

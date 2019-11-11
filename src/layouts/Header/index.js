@@ -23,7 +23,7 @@ export default class PPMallHeader extends React.Component {
 
   render() {
     return (
-      <Layout.Header style={{ height: '100px', padding: '0 10% 0 10%' }}>
+      <Layout.Header className={HeaderStyle.page}>
         <Row
           type="flex"
           align="middle"
@@ -81,6 +81,7 @@ export default class PPMallHeader extends React.Component {
               </Menu.Item>
               <Menu.Item key="user">
                 <Popover
+                  overlayClassName={HeaderStyle.popoverCard}
                   placement="bottom"
                   arrowPointAtCenter
                   content={
@@ -104,7 +105,7 @@ export default class PPMallHeader extends React.Component {
                   }
                 >
                   <Link to="/login">
-                    <img src="/user.svg" className={HeaderStyle.navImg} alt="" />
+                    <img src="/user.svg" className={HeaderStyle.navImg} alt="user" />
                   </Link>
                 </Popover>
               </Menu.Item>

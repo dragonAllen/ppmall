@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Carousel, Card, Row, Col } from 'antd';
 import { Link } from 'umi';
 import HomeStyle from './index.scss';
@@ -200,14 +200,15 @@ export default class Index extends Component {
           <Carousel autoplay draggable lazyLoad="progressive" pauseOnFocus pauseOnHover>
             {this.state.CarouselArray.map((content, index) => {
               return (
-                <Link to="/detail/good">
-                  <img
-                    src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/photo/${content.src}`}
-                    className={HomeStyle.carouselImg}
-                    alt={content.alt}
-                    key={index}
-                  />
-                </Link>
+                <Fragment key={content.src}>
+                  <Link to="/detail/good">
+                    <img
+                      src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/photo/${content.src}`}
+                      className={HomeStyle.carouselImg}
+                      alt={content.alt}
+                    />
+                  </Link>
+                </Fragment>
               );
             })}
           </Carousel>
@@ -232,9 +233,11 @@ export default class Index extends Component {
             <Row gutter={4}>
               {this.state.videoArray.map((content, index) => {
                 return (
-                  <Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6} key={content.id}>
-                    <VideoPreviewCard data={content} />
-                  </Col>
+                  <Fragment key={content.id}>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={8} xxl={6} >
+                      <VideoPreviewCard data={content} />
+                    </Col>
+                  </Fragment>
                 );
               })}
             </Row>

@@ -121,7 +121,7 @@ export default class Login extends React.Component {
       weChat: <p>content2</p>,
     };
     return (
-      <div style={{ width: '100%', height: '100%' }}>
+      <div className={LoginStyle.page}>
         {this.state.register ? (
           registerContent
         ) : (
@@ -132,16 +132,9 @@ export default class Login extends React.Component {
               onTabChange={key => {
                 this.onTabChange(key, 'key');
               }}
-              style={{
-                height: '80%',
-                width: '600px',
-                top: '10%',
-                bottom: '10%',
-                margin: 'auto',
-                borderRadius: '8px',
-              }}
+              className={LoginStyle.loginCard}
             >
-              <div style={{ width: '100%', height: '100%' }}>{contentList[this.state.key]}</div>
+              {contentList[this.state.key]}
             </Card>
           </Fragment>
         )}
