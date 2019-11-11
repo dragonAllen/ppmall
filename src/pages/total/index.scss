@@ -28,6 +28,10 @@
     height: 100px;
   }
 
+  .listOneRowText{
+    font-weight: 700;
+  }
+
   .listSecondRow {
     height: 50px;
   }
@@ -49,6 +53,7 @@
     text-align: right;
 
     .listThirdRowSecondColText{
+      font-weight: 700;
       margin-left: 6px;
     }
   }

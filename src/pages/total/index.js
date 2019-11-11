@@ -1,11 +1,11 @@
 import React from 'react';
 import { Row, Col, Card, Select, List, Typography, Tag, Popover, Carousel } from 'antd';
-import HotStyle from './index.scss';
+import TotalStyle from './index.scss';
 
 const { Option } = Select;
-const { Paragraph, Text, Title } = Typography;
+const { Text } = Typography;
 
-export default class Hot extends React.Component {
+export default class Total extends React.Component {
   state = {
     cartArray: [
       {
@@ -65,14 +65,14 @@ export default class Hot extends React.Component {
 
   render() {
     const content = (
-      <Row className={HotStyle.popOverCard}>
+      <Row className={TotalStyle.popOverCard}>
         <Row>
           <Text ellipsis>Sid Meier’s Civilization® VI</Text>
         </Row>
         <Row>
           <Text ellipsis>文明6</Text>
         </Row>
-        <Row className={HotStyle.cardRowWithBottom}>
+        <Row className={TotalStyle.cardRowWithBottom}>
           <Text>发行时间: 2019年10月16日</Text>
         </Row>
         <Carousel
@@ -82,47 +82,47 @@ export default class Hot extends React.Component {
           dots={false}
           autoplaySpeed={1000}
           effect="fade"
-          className={HotStyle.cardInnerCarousel}
+          className={TotalStyle.cardInnerCarousel}
         >
           {this.state.CarouselArray.map((content, index) => {
             return (
               <img
                 src={`https://knight-sz.oss-cn-shenzhen.aliyuncs.com/photo/${content}`}
-                alt=""
+                alt="测试"
                 key={index}
-                className={HotStyle.carouselImg}
+                className={TotalStyle.carouselImg}
               />
             );
           })}
         </Carousel>
-        <Row className={HotStyle.cardRowWithTop}>
+        <Row className={TotalStyle.cardRowWithTop}>
           <Text>标签</Text>
         </Row>
-        <Row className={HotStyle.cardTagContent}>
-          <Tag className={HotStyle.cardTag}>动作</Tag>
-          <Tag className={HotStyle.cardTag}>策略战棋</Tag>
-          <Tag className={HotStyle.cardTag}>回合制</Tag>
+        <Row className={TotalStyle.cardTagContent}>
+          <Tag className={TotalStyle.cardTag}>动作</Tag>
+          <Tag className={TotalStyle.cardTag}>策略战棋</Tag>
+          <Tag className={TotalStyle.cardTag}>回合制</Tag>
         </Row>
       </Row>
     );
     return (
-      <div className={HotStyle.page}>
+      <div className={TotalStyle.page}>
         <Card
           type="inner"
           extra={
-              <Select defaultValue="相关性" className={HotStyle.listSelect}>
-                <Option value="相关性">相关性</Option>
-                <Option value="发行日期">发行日期</Option>
-                <Option value="名称">名称</Option>
-                <Option value="价格从低到高">价格从低到高</Option>
-                <Option value="价格从高到低"> 价格从高到低</Option>
-              </Select>
+            <Select defaultValue="相关性" className={TotalStyle.listSelect}>
+              <Option value="相关性">相关性</Option>
+              <Option value="发行日期">发行日期</Option>
+              <Option value="名称">名称</Option>
+              <Option value="价格从低到高">价格从低到高</Option>
+              <Option value="价格从高到低"> 价格从高到低</Option>
+            </Select>
           }
-          className={HotStyle.listCard}
+          className={TotalStyle.listCard}
           headStyle={{ background: '#001529' }}
         >
           <List
-            className={HotStyle.innerList}
+            className={TotalStyle.innerList}
             dataSource={this.state.cartArray}
             pagination={{
               onChange: page => {
@@ -132,36 +132,30 @@ export default class Hot extends React.Component {
               pageSize: 10,
             }}
             renderItem={item => (
-              <Popover content={content} placement="left">
+              <Popover content={content} placement="left" mouseEnterDelay={0.5}>
                 <List.Item key={item.id}>
-                  <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }} className={HotStyle.listItem}>
+                  <Row gutter={{ xs: 8, sm: 8, md: 16, lg: 16 }} className={TotalStyle.listItem}>
                     <Col xs={24} sm={24} md={10} lg={8} xl={6} xxl={4}>
                       <img
-                        className={HotStyle.listImg}
+                        className={TotalStyle.listImg}
                         alt=""
                         src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
                       />
                     </Col>
                     <Col xs={24} sm={24} md={14} lg={16} xl={18} xxl={20}>
                       <Row>
-                        <Text ellipsis>Sid Meier’s Civilization® VI</Text>
+                        <Text ellipsis className={TotalStyle.listOneRowText}>
+                          Sid Meier’s Civilization® VI
+                        </Text>
                       </Row>
-                      <Row className={HotStyle.listSecondRow}>
+                      <Row className={TotalStyle.listSecondRow}>
                         <Text ellipsis>文明6</Text>
                       </Row>
                       <Row>
                         <Col xs={24} sm={24} md={24} lg={6} xl={4} xxl={4}>
-                            <img
-                              className={HotStyle.listThirdRowTag}
-                              alt=""
-                              src="/windows.svg"
-                            />
-                            <img className={HotStyle.listThirdRowTag} alt="" src="/mac.svg" />
-                            <img
-                              className={HotStyle.listThirdRowTag}
-                              alt=""
-                              src="/steam.svg"
-                            />
+                          <img className={TotalStyle.listThirdRowTag} alt="" src="/windows.svg" />
+                          <img className={TotalStyle.listThirdRowTag} alt="" src="/mac.svg" />
+                          <img className={TotalStyle.listThirdRowTag} alt="" src="/steam.svg" />
                         </Col>
                         <Col
                           xs={16}
@@ -170,10 +164,10 @@ export default class Hot extends React.Component {
                           lg={12}
                           xl={14}
                           xxl={14}
-                          className={HotStyle.listThirdRowSecondCol}
+                          className={TotalStyle.listThirdRowSecondCol}
                         >
                           <Text>2019年10月16日</Text>
-                          <Tag color="#001529" className={HotStyle.listThirdRowSecondColTag}>
+                          <Tag color="#001529" className={TotalStyle.listThirdRowSecondColTag}>
                             -22%
                           </Tag>
                         </Col>
@@ -184,10 +178,10 @@ export default class Hot extends React.Component {
                           lg={6}
                           xl={6}
                           xxl={6}
-                          className={HotStyle.listThirdRowThirdCol}
+                          className={TotalStyle.listThirdRowThirdCol}
                         >
                           <Text delete>¥ 199</Text>
-                          <Text className={HotStyle.listThirdRowSecondColText}>¥ 99</Text>
+                          <Text className={TotalStyle.listThirdRowSecondColText}>¥ 99</Text>
                         </Col>
                       </Row>
                     </Col>

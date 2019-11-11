@@ -1,0 +1,41 @@
+.loginCard {
+  height: 80%;
+  width: 600px;
+  top: 10%;
+  bottom: 10%;
+  margin: auto;
+  border-radius: 8px;
+
+  .content{
+    padding: 0 15%;
+  }
+
+  .title{
+    margin: 120px 0 60px 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .text{
+    cursor: pointer;
+    color: #d44d44;
+  }
+
+  .annotation{
+    color: #bfbfbf;
+    text-align: center;
+  }
+}
+
+
+
+:global {
+  .ant-tabs-nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ant-tabs .ant-tabs-large-bar .ant-tabs-tab {
+    width: 45%;
+  }
+}

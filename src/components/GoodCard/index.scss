@@ -1,0 +1,50 @@
+.selectCard {
+  border-radius: 8px 8px 0 0;
+}
+
+.innerCart {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 340px;
+}
+
+.coverImg{
+  max-height: 200px
+}
+
+.discounts {
+  color: #001529;
+  text-align: right;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 1600px) {
+  .discounts {
+    color: #001529;
+    font-weight: 600;
+    text-align: right;
+  }
+}
+
+.cartHoverOne {}
+
+.cartHoverTwo {
+  margin-top: 10px;
+  display: none;
+}
+
+.innerCart:hover .cartHoverOne {
+  display: none;
+}
+.innerCart:hover .cartHoverTwo {
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+}
+
+.cartButtonOne {
+  text-align: right;
+}
+.cartButtonTwo {
+  text-align: left;
+}

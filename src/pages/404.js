@@ -16,7 +16,7 @@ const Error = () => (
           您访问的页面不存在
         </div>
         <div style={{ marginTop:'20px' }}>
-        <Button type="primary" style={{width:'200px',height:'40px'}}>去往首页</Button>
+        <Button ghost  style={{width:'200px',height:'40px'}}>去往首页</Button>
         </div>
     </Row>
   </div>

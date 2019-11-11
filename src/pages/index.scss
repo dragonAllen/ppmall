@@ -3,143 +3,16 @@
 }
 
 .content {
+  padding: 0 0 20px 0;
+  margin-bottom: 40px;
+}
+
+.carouselContent {
   padding: 20px 0 20px 0;
-}
 
-.carouselImg {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.selectGrid {
-  width: 33.33%;
-  text-align: center;
-}
-@media screen and (max-width: 575px) {
-  .selectGrid {
-    width: 50%;
-    text-align: center;
+  .carouselImg {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
-}
-
-.selectCard {
-  border-radius: 8px 8px 0 0;
-}
-
-.discounts {
-  color: #001529;
-  text-align: right;
-  font-weight: 600;
-}
-
-@media screen and (min-width: 1600px) {
-  .discounts {
-    color: #001529;
-    font-weight: 600;
-    text-align: right;
-  }
-}
-
-.innerCart {
-  margin-bottom: 10px;
-  width: 100%;
-  height: 340px;
-}
-.videoInnerCart {
-  margin-bottom: 10px;
-  width: 100%;
-  height: 340px;
-}
-
-.cartHoverOne {
-}
-.cartHoverTwo {
-  margin-top: 10px;
-  display: none;
-}
-
-.innerCart:hover .cartHoverOne {
-  display: none;
-}
-.innerCart:hover .cartHoverTwo {
-  margin-top: 20px;
-  text-align: center;
-  display: block;
-}
-
-.cartButtonOne {
-  text-align: right;
-}
-.cartButtonTwo {
-  text-align: left;
-}
-
-.videoWrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: hidden;
-  text-align: left;
-}
-
-$videoCoverWidth: 100%;
-
-.videoImg {
-  width: $videoCoverWidth;
-  height: 240px;
-}
-
-.coverPreviewModule {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: $videoCoverWidth;
-  height: 240px;
-  background: black;
-  transition: opacity 0.3s;
-
-  .cover {
-    position: absolute;
-    left: 0;
-    top: 10px;
-    height: 100%;
-    width: $videoCoverWidth;
-    margin-top: 2px;
-  }
-  .progressBar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 14px;
-    border-color: #000;
-    border-style: solid;
-    border-width: 4px 8px;
-    background: #444;
-    box-sizing: border-box;
-  }
-  .dur {
-    position: absolute;
-    bottom: 4px;
-    left: 6px;
-    color: #fff;
-    height: 12px;
-    line-height: 12px;
-    padding: 0 5px 1px 0;
-    transition: all 0.3s;
-  }
-
-  .videoTitle {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-}
-
-.tabShow {
-  display: none;
-}
-
-.tabShowActive {
-  display: block;
 }
