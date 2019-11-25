@@ -2,9 +2,14 @@ import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import { Layout, Menu, BackTop, Icon, notification } from 'antd';
+import './index.scss';
 import Link from 'umi/link';
 
 class BasicLayout extends React.Component {
+  state = {
+    show: true,
+  };
+
   componentWillMount() {
     const title = <p style={{ color: '#108ee9' }}>欢迎光临PPMall</p>;
     const desc = (
@@ -29,28 +34,28 @@ class BasicLayout extends React.Component {
       return <Layout style={{ height: '100%' }}>{this.props.children}</Layout>;
     }
     return (
-      <Layout>
-        <Header />
-        <Menu
-          style={{ width: '100%', padding: '0 10% 0 10%', fontSize: '16px' }}
-          defaultSelectedKeys={[href]}
-          selectedKeys={[href]}
-          mode="horizontal"
-          theme="dark"
-        >
-          <Menu.Item key="/">
-            <Link to="/">首页</Link>
-          </Menu.Item>
-          <Menu.Item key="/total">
-            <Link to="/total">全部</Link>
-          </Menu.Item>
-        </Menu>
-        <Layout.Content>{this.props.children}</Layout.Content>
-        <Footer />
-        <BackTop>
-          <img src="/rocket.svg" alt="向上" width={60} height={60} />
-        </BackTop>
-      </Layout>
+        <Layout>
+          <Header />
+          <Menu
+            style={{ width: '100%', padding: '0 10% 0 10%', fontSize: '16px' }}
+            defaultSelectedKeys={[href]}
+            selectedKeys={[href]}
+            mode="horizontal"
+            theme="dark"
+          >
+            <Menu.Item key="/">
+              <Link to="/">首页</Link>
+            </Menu.Item>
+            <Menu.Item key="/total">
+              <Link to="/total">全部</Link>
+            </Menu.Item>
+          </Menu>
+          <Layout.Content>{this.props.children}</Layout.Content>
+          <Footer />
+          <BackTop>
+            <img src="/rocket.svg" alt="向上" width={60} height={60} />
+          </BackTop>
+        </Layout>
     );
   }
 }

@@ -1,4 +1,3 @@
-
 // ref: https://umijs.org/config/
 export default {
   urlLoaderExcludes: [
@@ -10,6 +9,7 @@ export default {
       .use('raw')
       .loader('raw-loader')
   },
+  // extraBabelPlugins: [['transform-remove-console']],
   treeShaking: true,
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
@@ -21,7 +21,7 @@ export default {
       },
       antd: true,
       dva: true,
-      dynamicImport: false,
+      dynamicImport: true,
       title: 'ppmall',
       dll: false,
       routes: {

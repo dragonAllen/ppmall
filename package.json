@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "antd": "^3.25.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "classnames": "^2.2.6",
     "dva": "^2.6.0-beta.6",
     "lodash": "^4.17.15",
@@ -34,7 +35,7 @@
     "node-sass": "^4.12.0",
     "react-test-renderer": "^16.7.0",
     "sass-loader": "^8.0.0",
-    "umi": "^2.7.7",
+    "umi": "^2.11.3",
     "umi-lint": "^2.0.2",
     "umi-plugin-react": "^1.8.4"
   },
