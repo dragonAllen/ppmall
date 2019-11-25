@@ -1,4 +1,4 @@
-## my custom mall basic on umi
+## 基于 umi 的 ppmall商城前端 还在开发中
 
 ````
 umi // 可插拔的企业级 react 应用框架
@@ -15,3 +15,8 @@ classnames // react中简化classnames引用
 react-markdown // markdown渲染
 raw-loader // 可将文件作为字符串导入
 ````
+### 开发笔记
+[antd记录之表单再封装](./devDoc/antd记录之表单再封装.md)
+[antd记录之表格小计和汇总](./devDoc/antd记录之表格小计和汇总.md)
+[antd记录之走马灯自定义切换形式](./devDoc/antd记录之走马灯自定义切换形式.md)
+[video-react记录之自定义封装](./devDoc/video-react记录之自定义封装.md)
