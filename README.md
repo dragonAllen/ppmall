@@ -23,3 +23,9 @@ raw-loader // 可将文件作为字符串导入
 [antd记录之走马灯自定义切换形式](./devDoc/antd记录之走马灯自定义切换形式.md)
 
 [video-react记录之自定义封装](./devDoc/video-react记录之自定义封装.md)
+
+### 启动
+```
+yarn install
+yarn start
+```
